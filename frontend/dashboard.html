@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr.AI - Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="bg-animation"></div>
+
+  <header class="navbar">
+    <h2>📊 Dr.AI Dashboard</h2>
+    <nav>
+      <button id="modeToggle" title="Toggle Dark/Light Mode">🌙</button>
+    </nav>
+  </header>
+
+  <main class="content dashboard-content">
+    <section class="dashboard-section">
+      <h1>Real-Time Health Analytics</h1>
+      <p class="subtitle">Visualize diabetes trends and prediction patterns.</p>
+
+      <div class="chart-container">
+        <canvas id="trendChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="healthChart"></canvas>
+      </div>
+
+      <button onclick="window.location.href='index.html'" class="glow-btn secondary">🏠 Back to Predictor</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>⚙️ Dr.AI Dashboard • Health Insights Powered by ML</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const ctx1 = document.getElementById("trendChart");
+    const ctx2 = document.getElementById("healthChart");
+
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [{
+          label: "Diabetes Risk (%)",
+          data: [45, 50, 55, 60, 70, 75],
+          borderColor: "#8e2de2",
+          borderWidth: 2,
+          tension: 0.4
+        }]
+      },
+      options: {
+        plugins: { legend: { labels: { color: "#fff" } } },
+        scales: {
+          x: { ticks: { color: "#fff" } },
+          y: { ticks: { color: "#fff" } }
+        }
+      }
+    });
+
+    new Chart(ctx2, {
+      type: "bar",
+      data: {
+        labels: ["Healthy", "Pre-Diabetic", "Diabetic"],
+        datasets: [{
+          label: "Population Distribution",
+          data: [60, 25, 15],
+          backgroundColor: ["#32cd32", "#ffcc00", "#ff3b3b"]
+        }]
+      },
+      options: {
+        plugins: { legend: { labels: { color: "#fff" } } },
+        scales: {
+          x: { ticks: { color: "#fff" } },
+          y: { ticks: { color: "#fff" } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr.AI - Diabetes Prediction</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Animation -->
+  <div class="bg-animation"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <h2>🩺 Dr.AI Nanban</h2>
+    <nav>
+      <button id="modeToggle" title="Toggle Dark/Light Mode">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <section class="left-panel">
+      <h1>AI-Nanban Diabetes Prediction</h1>
+      <p class="subtitle">
+        Get instant health insights using Artificial Intelligence. Enter your medical data and know your diabetic status in seconds.
+      </p>
+
+      <form id="predictForm" class="form-card">
+        <div class="input-grid">
+          <input type="number" step="any" placeholder="Pregnancies" required />
+          <input type="number" step="any" placeholder="Glucose" required />
+          <input type="number" step="any" placeholder="Blood Pressure" required />
+          <input type="number" step="any" placeholder="Skin Thickness" required />
+          <input type="number" step="any" placeholder="Insulin" required />
+          <input type="number" step="any" placeholder="BMI" required />
+          <input type="number" step="any" placeholder="Diabetes Pedigree Function" required />
+          <input type="number" step="any" placeholder="Age" required />
+        </div>
+        <button type="submit" class="glow-btn">🔍 Predict</button>
+      </form>
+
+      <div id="output" class="result-card">
+        <h2 id="result"></h2>
+        <p id="recommendation"></p>
+      </div>
+
+      <div class="btn-group">
+        <button id="dashboardBtn" class="glow-btn secondary">📊 View Analytics Dashboard</button>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966489.png" alt="Doctor" class="hero-img" />
+    </section>
+  </main>
+
+  <footer>
+    <p>🏥 Powered by AI • Developed with Flask + Machine Learning</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("dashboardBtn").addEventListener("click", () => {
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>
