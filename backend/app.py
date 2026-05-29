@@ -25,6 +25,10 @@ def api_predict():
         return jsonify({"prediction": result})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/google3da68b461326bcb0.html')
+def google_verify():
+    return send_from_directory(FRONTEND_DIR, 'google3da68b461326bcb0.html')
 
 if __name__ == "__main__":
     print("✅ Flask server started at http://127.0.0.1:5000")
