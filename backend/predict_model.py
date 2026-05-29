@@ -6,10 +6,10 @@ from sklearn import svm
 from sklearn.metrics import accuracy_score
 
 # Load dataset
-diabetes_dataset = pd.read_csv('backend/diabetes.csv')
+diabetes_dataset = pd.read_csv('diabetes.csv')
 
 # Split features and labels
-X = diabetes_dataset.drop(columns='Outcome', axis=1)
+X = diabetes_dataset.drop('Outcome', axis=1)
 Y = diabetes_dataset['Outcome']
 
 # Standardize
